@@ -10,3 +10,13 @@
 
 <%= link_to "Add Review", new_restaurant_review_path(@restaurant) %>
 
+<%# add the existing reviews here  %>
+<div class="reviews">
+  <h2>Reviews</h2>
+  <% @restaurant.reviews.each do |review| %>
+    <div class="review">
+      <p>Rating: <%= review.rating %></p>
+      <p>Comment: <%= review.content %></p>
+    </div>
+  <% end %>
+</div>
