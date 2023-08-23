@@ -1,0 +1,19 @@
+<%# In this page we will be having the form, that the user will fill %>
+<%# thats why we implement in the controller @resturant - Restaurant.new %>
+<%# it represents an empty instance so that the user can fill it here %>
+<%# but we are not yet done, the create takes two methods, new and create %>
+<%# here the user will fill the form and in order to submit we need create method %>
+<%# since we will use this form multiple of times, we can add patial file in the html and then use render her to use this file %>
+
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name %>
+  <%= f.input :address %>
+  <%= f.input :category, collection: %w[chinese italian japanese french belgian] %>
+  <%= f.input :phone_number %>
+  <%= f.submit %>
+<% end %>
+
+<%# add a link to take us back to the home page %>
+<%= link_to 'Home Page', restaurants_path%>
+
+<%# now we go and create the def create %>

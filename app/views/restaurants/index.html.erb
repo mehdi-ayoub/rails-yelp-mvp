@@ -1,0 +1,13 @@
+<h1> Below is our Restaurants </h1>
+
+<ul>
+<%# Below we iterate over the whole restaurante and add a path with the help of rails route %>
+<% @restaurants.each do |restaurant| %>
+  <li> <%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+<% end %>
+
+</ul>
+
+<%# add a link her to take us to the /new file for the user to add new restuarant %>
+
+<%= link_to 'Add new restaurant', new_restaurant_path%>

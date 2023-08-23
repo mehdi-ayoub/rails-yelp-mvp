@@ -1,0 +1,11 @@
+<%# here @restaurants is to know why restaurant,  %>
+<%# and @review in order to use th review instance which we created in the new method %>
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <%= f.input :rating %>
+  <%= f.input :content%>
+  <%= f.submit "Submit Review" %>
+<% end %>
+
+<%# add link to go to the reviewed restaurant %>
+
+<%= link_to 'Back to the restaurant', restaurant_path(@restaurant) %>
